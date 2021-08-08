@@ -6,12 +6,14 @@ public:
     vector<int> shuffle(vector<int> &nums, int n)
     {
         vector<int> ans;
-        int count = 1;
-        while (count < nums.size() / 2)
+        int count = 0;
+        int val = n;
+        while (count < n)
         {
-            ans.push_back(count);
-            ans.push_back(count + n);
+            ans.push_back(nums[count]);
+            ans.push_back(nums[val]);
             count++;
+            val++;
         }
         return ans;
     }
