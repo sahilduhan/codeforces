@@ -1,1 +1,0 @@
-{"name":"Local: translation","url":"/home/duhan/Desktop/codeforces/code_forces/translation.cpp","tests":[{"id":1628533842752,"input":"code\nedoc","output":"YES"},{"id":1628534124675,"input":"abb\naba","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/duhan/Desktop/codeforces/code_forces/translation.cpp","group":"local","local":true}
