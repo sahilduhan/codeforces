@@ -3,12 +3,8 @@ using namespace std;
 int main()
 {
     int num = 0, i = 0;
-    cin >> num;
-    while (num--)
-    {
-
-        cin >> i;
-    }
-
+    cin >> num >> i;
+    string str;
+    cin >> str;
     return 0;
-}// question samaj nai aaya
+}
