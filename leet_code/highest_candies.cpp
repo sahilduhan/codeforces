@@ -10,12 +10,11 @@ public:
         {
             candies[i] += extraCandies;
         }
-        for (int i = 0; i < candies.size(); i++)
+        ans[0] = true;
+        for (int i = 1; i < candies.size(); i++)
         {
-            if (candies[i] < candies[i - 1])
-                ans.push_back("false");
-            else
-                ans.push_back("true");
+            if (candies[i] < candies[i - 1]) ans.push_back(false);
+            else ans.push_back(true);
         }
         return ans;
     }
