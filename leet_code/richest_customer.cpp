@@ -5,10 +5,13 @@ class Solution
 public:
     int maximumWealth(vector<vector<int>> &accounts)
     {
-        int max_value = INT_MIN;
-        for (int i = 0; i < accounts.size(); i++)
+        int maximumWealth = 0;
+        for (auto i : accounts)
         {
-            
+            int sum=0;
+            for (auto j : i) sum += j;
+            if (maximumWealth < sum) maximumWealth=sum;
         }
+        return maximumWealth;
     }
 };
