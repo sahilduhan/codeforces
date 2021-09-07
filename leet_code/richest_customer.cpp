@@ -14,4 +14,5 @@ public:
         }
         return maximumWealth;
     }
+    
 };
