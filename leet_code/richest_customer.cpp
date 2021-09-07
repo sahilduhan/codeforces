@@ -8,11 +8,10 @@ public:
         int maximumWealth = 0;
         for (auto i : accounts)
         {
-            int sum=0;
+            int sum = 0;
             for (auto j : i) sum += j;
-            if (maximumWealth < sum) maximumWealth=sum;
+            if (maximumWealth < sum) maximumWealth = sum;
         }
         return maximumWealth;
     }
-    
 };
