@@ -10,12 +10,17 @@ using namespace std;
 };
 class Solution {
 public:
+    int height_tree(TreeNode* root){
+        if(root==NULL) return 0;
+        return max(height_tree(root->left), height_tree(root->right))+1;
+    }
     int diameterOfBinaryTree(TreeNode* root) {
         if(root ==NULL) return 0;
-        int left_diameter = diameterOfBinaryTree(root->left)+1;
-        int right_diameter = diameterOfBinaryTree(root->right)+1;
-        int total_diameter = max(diameterOfBinaryTree(root->right), diameterOfBinaryTree(root->left));
-        return max(total_diameter, max(left_diameter, right_diameter));
+        int left_height = height_tree(root->left);
+        int right_height = height_tree(root->right);
+        int left_diameter = diameterOfBinaryTree(root->left);
+        int right_diameter = diameterOfBinaryTree(root->right);
+        return max(left_height+ right_height+1, max(left_diameter, right_diameter));
     }
 };
 int main()
