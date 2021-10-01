@@ -10,7 +10,7 @@ public:
         {
             for (int j = 1; j < nums.size(); j++)
             {
-                if (nums[i] == nums[j] and i<j) count++;
+                if (nums[i] == nums[j] and i < j) count++;
             }
         }
         return count;
