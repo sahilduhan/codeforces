@@ -10,5 +10,6 @@ public:
         while (word1.size() && word2.size())
         {
         }
+        return false;
     }
 };
