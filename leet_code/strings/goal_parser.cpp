@@ -8,7 +8,6 @@ public:
         string result = "";
         for (int i = 0; i < command.length(); i++)
         {
-            
         }
         return result;
     }

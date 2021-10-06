@@ -5,15 +5,11 @@ class Solution
 public:
     int sumOddLengthSubarrays(vector<int> &arr)
     {
-        int final_ans = 0;
-        for (int i = 0; i < arr.size(); i++)
-        {
-            for(int j = i; j < arr.size(); j++)
-            {
-                
-            }
-        }
-        return final_ans;
+        long int result = 0;
+        int n = arr.size();
+        for (int i = 0; i < n; i++)
+            result += (arr[i] * (i + 1) * (n - i));
+        return result;
     }
 };
 int main()
