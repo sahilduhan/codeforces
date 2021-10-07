@@ -5,12 +5,12 @@ class Solution
 public:
     int peakIndexInMountainArray(vector<int> &arr)
     {
-        int peakIndex = 0;
-        for (int i = 0; i < arr.size(); i++)
+        int i = 0;
+        while (arr[i] < arr[i + 1])
         {
-            if(arr[i]<arr[i+1]) peakIndex +=1;
+            i++;
         }
-        return peakIndex;
+        return i;
     }
 };
 int main()
