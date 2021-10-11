@@ -5,17 +5,14 @@ class Solution
 public:
     vector<bool> kidsWithCandies(vector<int> &candies, int extraCandies)
     {
-        vector<bool> ans;
-        for (int i = 0; i < candies.size(); i++)
+        vector<bool> output;
+        int maximum = INT_MIN;
+        for (auto &i : candies) maximum = max(maximum, i);
+        for (auto &i : candies)
         {
-            candies[i] += extraCandies;
+            if ((i + extraCandies >= maximum)) output.push_back(true);
+            else output.push_back(false);
         }
-        ans[0] = true;
-        for (int i = 1; i < candies.size(); i++)
-        {
-            if (candies[i] < candies[i - 1]) ans.push_back(false);
-            else ans.push_back(true);
-        }
-        return ans;
+        return output;
     }
 };
