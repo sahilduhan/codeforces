@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-  struct TreeNode {
+struct TreeNode
+{
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -8,25 +9,25 @@ using namespace std;
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-class Solution {
+class Solution
+{
+    int diameter = 0;
 public:
-    int height_tree(TreeNode* root){
-        if(root==NULL) return 0;
-        return max(height_tree(root->left), height_tree(root->right))+1;
+    int dfs(TreeNode *root)
+    {
+        if (!root) return 0;
+        int left = dfs(root->left), right = dfs(root->right);
+        diameter = max(diameter, left + right);
+        return max(left, right) + 1;
     }
-    int diameterOfBinaryTree(TreeNode* root) {
-        if(root ==NULL) return 0;
-        int left_height = height_tree(root->left);
-        int right_height = height_tree(root->right);
-        int left_diameter = diameterOfBinaryTree(root->left);
-        int right_diameter = diameterOfBinaryTree(root->right);
-        return max(left_height+ right_height+1, max(left_diameter, right_diameter));
+    int diameterOfBinaryTree(TreeNode *root)
+    {
+        dfs(root);
+        return diameter;
     }
 };
 int main()
 {
-
-
 
     return 0;
 }

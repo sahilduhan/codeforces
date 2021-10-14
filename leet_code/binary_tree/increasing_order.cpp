@@ -12,6 +12,9 @@ struct TreeNode
 class Solution
 {
 public:
+    void inorder(TreeNode *root, vector<int> &result)
+    {
+    }
     TreeNode *increasingBST(TreeNode *root)
     {
         return NULL;
