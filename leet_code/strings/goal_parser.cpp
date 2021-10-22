@@ -8,6 +8,10 @@ public:
         string result = "";
         for (int i = 0; i < command.length(); i++)
         {
+            if(command[i]=='G') result.push_back('G');
+            if(command[i]=='(' && command[i+1]==')') result.push_back('o');
+            if(command[i]=='(' && command[i+1]==')') result.push_back('o');
+            else if(command[i]=='(' && command[i+1]=='a') result+="al";
         }
         return result;
     }
