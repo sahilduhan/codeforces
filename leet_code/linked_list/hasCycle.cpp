@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-//  * Definition for singly-linked list.
 class ListNode
 {
 public:
@@ -8,18 +7,16 @@ public:
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
 };
-
-class Solution
-{
+class Solution {
 public:
-    bool hasCycle(ListNode *head)
-    {
-        ListNode *temp;
-        ListNode *itr;
-        while (itr != NULL)
-        {
-        }
-        return false;
+    bool hasCycle(ListNode *head) {
+        ListNode *slow,*fast;
+        slow=fast=head;
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(fast==slow) return true;
+        }return false;   
     }
 };
 int main()
