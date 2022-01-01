@@ -18,14 +18,6 @@ public:
     }
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         int len = length(head);
-        ListNode* temp = head;
-        int count = 0;
-        while (count <= len - n){
-            count++;
-            if (count == len - n) {
-                temp->next = temp->next->next;
-            }
-        }
-        return head;
+
     }
 };
