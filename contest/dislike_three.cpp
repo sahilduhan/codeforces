@@ -3,7 +3,7 @@ using namespace std;
 void solve()
 {
     int n;
-    cin>>n; int i = 0;
+    cin >> n; int i = 0;
     while (n--)
     {
         i++;
@@ -14,13 +14,13 @@ void solve()
             i++;
         }
     }
-    cout <<i<<endl;
+    cout << i << endl;
 }
 
 int main()
 {
     int t;
-    cin>>t; while (t--)
+    cin >> t; while (t--)
         solve();
     return 0;
 }
