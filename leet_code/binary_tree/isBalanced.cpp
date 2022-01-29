@@ -11,21 +11,18 @@ struct TreeNode {
 
 class Solution {
 public:
-    int height(TreeNode* root){
-        if (!root) return 0;
-        return max(height(root->left), height(root->right)) + 1;
-    }
     bool isBalanced(TreeNode* root) {
-        if (!root) return true;
-
-        if (isBalanced(root->left) == false) return false;
-        if (isBalanced(root->right) == false) return false;
-
-        int leftHeight = height(root->left);
-        int rightHeight = height(root->right);
-
-        int diff = leftHeight - rightHeight;
-        if (abs(diff) < 1) return true;
-        return false;
+        if (check(root) != -1) return true;
+        return false ;
+    }
+    int check(TreeNode* root)
+    {
+        if (root == NULL)return 0;
+        int l = check(root->left);
+        if (l == -1)return -1 ;
+        int r = check(root->right);
+        if (r == -1)return -1 ;
+        if (abs(l - r) > 1)return -1 ;
+        return max(l, r) + 1;
     }
 };
