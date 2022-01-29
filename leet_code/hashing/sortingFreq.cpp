@@ -6,9 +6,9 @@ public:
         unordered_map<int, int> mp;
         vector<int>res;
         for (int i = 0; i < nums.size(); i++) mp[nums[i]]++;
-
-        for (auto it : mp) {
-            for (int i = 0; i < it.second; i) res.push_back(it.first);
+        for (auto it : mp){
+            int val = it.second;
+            for (int i = 0; i < nums.size(); i++) res.push_back(mp[nums[i]]);
         }
         return res;
     }

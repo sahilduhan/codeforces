@@ -11,7 +11,12 @@ struct TreeNode {
 class Solution {
 public:
     bool isUnivalTree(TreeNode* root) {
-
+        int _val = root->val;
+        if (root == NULL) return true;
+        if (root->val != _val) return false;
+        isUnivalTree(root->left);
+        isUnivalTree(root->right);
+        return true;
     }
 };
 int main(){
