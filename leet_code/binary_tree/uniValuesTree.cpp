@@ -10,12 +10,16 @@ struct TreeNode {
 };
 class Solution {
 public:
+    void dfs(TreeNode* root, unordered_map<int, int>& mp){
+        if (root == NULL) return;
+        if (root->left) dfs(root->left, mp);
+        mp[root->val]++;
+        if (root->right) dfs(root->right, mp);
+    }
     bool isUnivalTree(TreeNode* root) {
-        int _val = root->val;
-        if (root == NULL) return true;
-        if (root->val != _val) return false;
-        isUnivalTree(root->left);
-        isUnivalTree(root->right);
+        unordered_map<int, int>mp;
+        dfs(root, mp);
+        if (mp.size() > 1) return false;
         return true;
     }
 };
