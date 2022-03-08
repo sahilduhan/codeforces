@@ -3,13 +3,11 @@ using namespace std;
 class Solution
 {
 public:
-    int peakIndexInMountainArray(vector<int> &arr)
+    int peakIndexInMountainArray(vector<int>& arr)
     {
         int i = 0;
-        while (arr[i] < arr[i + 1])
-        {
-            i++;
-        }
+        while (arr[i] < arr[i + 1]) i++;
+
         return i;
     }
 };

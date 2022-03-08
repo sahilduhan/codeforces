@@ -2,40 +2,22 @@
 using namespace std;
 class Solution {
 public:
-    int firstOccurence(vector<int>& nums, int val){
-        int res = -1;
-        int start = 0, end = nums.size() - 1;
-        while (start < end){
-            int mid = start + (end - start) / 2;
-            if (val == nums[mid]) {
-                res = mid;
-                end = mid - 1;
-            }
-            else if (val < nums[mid]) end = mid - 1;
-            else start = mid + 1;
-        }
-        return res;
-    }
-    int lastOccurence(vector<int>& nums, int val){
-        int start = 0, end = nums.size() - 1, res = -1;
-
-        while (start < end){
-            int mid = start + (end - start) / 2;
-            if (val == nums[mid]){
-                res = mid;
-                start = mid + 1;
-            }
-            if (val < nums[mid]) end = mid - 1;
-            else start = mid + 1;
-        }
-        return res;
-    }
     vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> res(2, -1);
-        int first = firstOccurence(nums, target);
-        int last = lastOccurence(nums, target);
-        res[0] = first;
-        res[1] = last;
+        vector<int> res{-1, -1};
+        int s = 0, e = nums.size() - 1, m = 0;
+        while (s <= e){
+            m = s + (e - s) / 2;
+            if (nums[m] == target) res[0] = m, e = m - 1;
+            else if (nums[m] < target) s = m + 1;
+            else e = m - 1;
+        }
+        s = 0, e = nums.size() - 1;
+        while (s <= e){
+            m = s + (e - s) / 2;
+            if (nums[m] == target) res[1] = m, s = m + 1;
+            else if (nums[m] < target) s = m + 1;
+            else e = m - 1;
+        }
         return res;
     }
 };
