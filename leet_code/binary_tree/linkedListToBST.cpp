@@ -19,36 +19,29 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* listToBst(ListNode* start, ListNode* end){
 
-        if (start == end) return NULL;
+    TreeNode* arrToBST(vector<int>v, int low, int high){
+        if (low > high) return NULL;
 
-        ListNode* fast = start, * slow = start;
-        while (fast && fast->next){
-            slow = slow->next;
-            fast = fast->next->next;
-        }
-        ListNode* mid = slow;
+        int mid = low + (high - low) / 2;
 
-        // assign the midd val as the root node
-
-        TreeNode* newRoot = new TreeNode(mid->val);
-
-        // since all the small values are on the left of the list
-        // tree left side
-
-        newRoot->left = listToBst(start, mid);
-
-        // tree right side
-        newRoot->right = listToBst(mid->next, end);
-
-        return newRoot;
+        TreeNode* newnode = new TreeNode(v[mid]);
+        newnode->left = arrToBST(v, low, mid - 1);
+        newnode->right = arrToBST(v, mid + 1, high);
+        return newnode;
     }
+
     TreeNode* sortedListToBST(ListNode* head) {
-        if (head == NULL) return NULL;
-        return listToBst(head, head);
+        vector<int>v;
+        while (head){
+            v.push_back(head->val);
+            head = head->next;
+        }
+        TreeNode* rootnode = arrToBST(v, 0, v.size() - 1);
+        return rootnode;
     }
 };
+
 int main(){
 
 }
