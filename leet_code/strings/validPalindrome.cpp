@@ -19,7 +19,6 @@ public:
 };
 int main(){
     string s = "0P";
-    // cout << isPalindrome(s) << endl;
 
     return 0;
 }
