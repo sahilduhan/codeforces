@@ -11,18 +11,21 @@ struct TreeNode {
 };
 
 class Solution {
-    TreeNode* createBST(TreeNode* root, int n){
-
-
-
-
-    }
 public:
-    TreeNode* bstFromPreorder(vector<int>& preorder) {
+    TreeNode* solve(TreeNode* root, int x){
+        if (root == NULL){
+            root = new TreeNode(x);
+            return root;
+        }
+        if (x > root->val) root->right = solve(root->right, x);
 
-        if (preorder.size() == 0) return NULL;
-        TreeNode* root = new TreeNode(preorder[0]);
-        for (auto it : preorder) createBST(root, it);
+        else root->left = solve(root->left, x);
+
+        return root;
+    }
+    TreeNode* bstFromPreorder(vector<int>& preorder) {
+        TreeNode* root = NULL;
+        for (auto it : preorder) root = solve(root, it);
         return root;
     }
 };
