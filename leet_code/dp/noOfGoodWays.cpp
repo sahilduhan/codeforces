@@ -1,10 +1,9 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 class Solution {
 public:
-    int nextGreaterElement(int n) {
-
-        return -1;
+    int numSplits(string s) {
+        int m = s.size();
     }
 };
 int main(){
