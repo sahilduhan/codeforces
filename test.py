@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 import pandas as pd
 
-form = pd.read_excel(r"/home/duhan/Downloads/DESU-2July.xlsx")
+form = pd.read_excel(r"/home/duhan/Desktop/p/PUNJAB CERITIFICATES - SOURCE FILE.xlsx")
 
 name_list = form['Name'].to_list()
 
